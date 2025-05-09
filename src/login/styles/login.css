@@ -1,1 +1,181 @@
-/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+    --color-main: #03cf5d;
+    --color-text: #121212;
+    --color-focus: #24388d;
+    --font-main: 'SF Pro Display', sans-serif;
+    --bg-body: #f5f5f5;
+    --bg-card: #ffffff;
+    --input-border: #dadada;
+    --input-focus-border: var(--color-main);
+    --input-focus-bg: #e9f0fd;
+    font-size: 16px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    background-color: var(--bg-body);
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .login-card {
+    background-color: var(--bg-card);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  label {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    height: 2.8125rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--input-border);
+    border-radius: 0.5rem;
+    padding: 0 0.75rem;
+    background-color: #fff;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    background-color: var(--input-focus-bg);
+    box-shadow: 0 0 0 2px var(--color-focus);
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  .checkbox-label {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px 24px;
+    padding-left: 29px;
+    font-size: 0.9rem;
+  }
+  
+  #keepLogin:checked + .checkbox-label {
+    background-image: url('../img/checked.svg');
+  }
+  
+  #keepLogin:not(:checked) + .checkbox-label {
+    background-image: url('../img/unchecked.svg');
+  }
+  
+  .ip-security {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .ip-link {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 2.5rem;
+    height: 1.25rem;
+  }
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 1rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+  }
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: white;
+    left: 0.125rem;
+    bottom: 0.125rem;
+    transition: 0.4s;
+  }
+  .switch input:checked + .slider {
+    background-color: var(--color-main);
+  }
+  .switch input:checked + .slider::before {
+    transform: translateX(1.25rem);
+  }
+  
+  .login-btn {
+    height: 2.8125rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--color-main);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .login-btn:hover {
+    background-color: #02b94f;
+  }
+  
