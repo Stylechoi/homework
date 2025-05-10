@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="네이버 로그인 페이지입니다." />
   <title>네이버 로그인</title>
-  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="styles/login.css" />
 </head>
 <body>
-  <main>
+  <main class="login-card">
     <div class="logo" aria-label="네이버 로고">
-      <svg width="230" height="44" viewBox="0 0 230 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="230" height="44" viewBox="0 0 230 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="네이버 로고">
         <path d="M30.0764 23.5394L13.6301 0H0V43.9824H14.279V20.443L30.7252 43.9824H44.3554V0H30.0764V23.5394Z" fill="#03CF5D"/>
         <path d="M66.2086 0L48.8973 43.9824H63.6132L65.701 38.1767H82.2929L84.3851 44H99.0967L81.7853 0.0175967L66.2086 0ZM69.0644 27.5946L73.9992 13.8545L78.9295 27.5946H69.0644Z" fill="#03CF5D"/>
         <path d="M116.624 28.9184L106.234 0H91.5224L108.834 43.9824H124.41L141.722 0H127.006L116.624 28.9184Z" fill="#03CF5D"/>
@@ -18,34 +19,49 @@
       </svg>
     </div>
 
-    <form class="login-form">
+    <form class="login-form" action="#" method="POST">
       <div class="form-group">
         <label for="userId">아이디</label>
-        <input type="text" id="userId" name="userId" required />
+        <input 
+          type="text" 
+          id="userId" 
+          name="userId" 
+          required 
+          autocomplete="username"
+          placeholder="아이디를 입력하세요"
+          aria-required="true"
+        />
       </div>
 
       <div class="form-group">
         <label for="userPw">비밀번호</label>
-        <input type="password" id="userPw" name="userPw" required />
+        <input 
+          type="password" 
+          id="userPw" 
+          name="userPw" 
+          required 
+          autocomplete="current-password"
+          placeholder="비밀번호를 입력하세요"
+          aria-required="true"
+        />
       </div>
 
       <div class="form-options">
         <div class="checkbox-container">
-          <input type="checkbox" id="keepLogin" />
+          <input type="checkbox" id="keepLogin" name="keepLogin" />
           <label for="keepLogin" class="checkbox-label">로그인 상태 유지</label>
         </div>
         <div class="ip-security">
-          <a href="pages/ip_secruity.html" target="_blank" class="ip-link">IP 보안</a>
-          <label class="switch">
-            <input type="checkbox" id="ipToggle" />
+          <a href="pages/ip_secruity.html" target="_blank" class="ip-link" rel="noopener noreferrer">IP 보안</a>
+          <label class="switch" aria-label="IP 보안 토글">
+            <input type="checkbox" id="ipToggle" name="ipToggle" />
             <span class="slider"></span>
           </label>
         </div>
       </div>
 
-      <button type="submit" class="login-btn">로그인</button>
+      <button type="submit" class="login-btn" aria-label="로그인">로그인</button>
     </form>
-
-    
-    <div style="display: none;">
-      <svg id="checked-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M23.9229 12.0021C23.9229 14.3609 23.2234 16.6666 21.9128 18.6277C20.6023 20.5889 18.7396 22.1173 16.5604 23.0198C14.3811 23.9222 11.9832 24.1581 9.66984 23.6977C7.3565 23.2372 5.23168 22.101 3.56411 20.4329C1.89654 18.7647 0.761138 16.6395 0.301494 14.326C-0.15815 12.0125 0.0786163 9.6146 0.981848 7.43567C1.88508 5.25674 3.4142 3.39461 5.37582 2.08479C7.33744 0.774969 9.64343 0.0763014 12.0022 0.0771492C13.568 0.0771491 15.1184 0.385629 16.565 0.984968C18.0116 1.58431 19.3259 2.46276 20.4329 3.57016C21.5399 4.67755 22.4179 5.99218 23.0167 7.43896C23.6155 8.88575 23.9234 10.4363 23.9229 12.0021Z" fill="#03CF5D"/><path d="M10.6648 16.9059L6.66976 13.1809C6.61009 13.121 6.56281 13.0499 6.53063 12.9716C6.49844 12.8934 6.48198 12.8096 6.48218 12.725C6.48238 12.6405 6.49924 12.5568 6.53179 12.4787C6.56434 12.4006 6.61195 12.3297 6.6719 12.2701C6.73185 12.2104 6.80296 12.1631 6.88119 12.1309C6.95941 12.0987 7.0432 12.0823 7.12778 12.0825C7.21237 12.0827 7.29608 12.0995 7.37415 12.1321C7.45222 12.1646 7.52311 12.2122 7.58278 12.2722
+  </main>
+</body>
+</html>
